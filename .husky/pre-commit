@@ -1,0 +1,33 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo 'ngerokok plus ngopi sek, soalne ngko styling, testing dan building project kita sebelum di commit ya!!'
+
+#check config standar
+npm run check-types ||
+(
+    echo ' SALAH LOHHHH PIYE TO
+            SERIUS DIKIT DONG KALO NULIS COMMITNYA PERLU DIATAS YA DEK LIAT CONTOHNE.'
+    false;
+)
+
+#check prettier standars
+npm run check-types ||
+(
+    echo ' GET THAT WEAK S**T OUT OF THERE  IUHH
+            eslint nya jadi salah. make the required changes listed above, add changes and try to commit again'
+    false;
+)
+
+#lagi ngebuild ya
+echo 'NAH GITU DONG DEK KAN LEBIH ENAK DILIAT TERUS BAGUS, MANA RAPIH LAGI SIP APIK POLL, LAGI DI BUILD YA SABARRRRR'
+
+npm run build ||
+(
+    echo ' YAHHH BUILD NYA GAGAL MAAP YA DEK
+            buid nya failed: liat diatas ya dek buat errornya kenapa silahkan dibaca'
+    false;
+)
+
+#kalo build selesai
+echo 'DEKKK KAMU SUKSES DEH PASTI MASA DEPAANNNNYA... OTW dimasukin commit ya.'
